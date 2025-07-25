@@ -26,21 +26,56 @@
             gtag('config', 'G-VL17SSCS63');
         </script>
         <style>
-            .project-card {
+            body {
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                background-color: #f8f9fa;
+                color: #343a40;
+            }
+            .navbar {
+                background-color: #ffffff;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .navbar-brand {
+                font-weight: bold;
+                color: #007bff;
+            }
+            .navbar-nav .nav-link {
+                color: #343a40;
+            }
+            .navbar-nav .nav-link.active {
+                color: #007bff;
+            }
+            .projects-section {
+                padding: 60px 0;
+            }
+            .projects-section h1 {
+                font-size: 2.5rem;
+                margin-bottom: 40px;
+                color: #007bff;
+            }
+            .project-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
+            }
+            .project-item {
+                background-color: #ffffff;
+                border: 1px solid #dee2e6;
+                border-radius: 8px;
+                padding: 20px;
                 transition: transform 0.3s, box-shadow 0.3s;
             }
-            .project-card:hover {
+            .project-item:hover {
                 transform: scale(1.05);
                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             }
-            .project-card img {
-                border-radius: 0 0 4px 4px;
-            }
-            .project-card h2 {
+            .project-item h2 {
                 color: #007bff;
+                margin-bottom: 15px;
             }
-            .project-card p {
+            .project-item p {
                 color: #6c757d;
+                margin-bottom: 20px;
             }
             .btn-primary {
                 background-color: #007bff;
@@ -50,293 +85,135 @@
                 background-color: #0056b3;
                 border-color: #0056b3;
             }
+            .footer {
+                background-color: #343a40;
+                color: #ffffff;
+                padding: 20px 0;
+                text-align: center;
+            }
+            .footer a {
+                color: #007bff;
+                margin: 0 10px;
+            }
         </style>
     </head>
-    <body class="d-flex flex-column h-100 bg-light">
+    <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
             <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+            <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container px-5">
-                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">A'Yanna Rouse</span></a>
+                    <a class="navbar-brand" href="index.html">A'Yanna Rouse</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link active" href="resume.html">Resume</a></li>
-                            <li class="nav-item"><a class="nav-link active" href="affiliations.html">Affiliations</a></li>
-                            <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
+                            <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                            <li class="nav-item"><a class="nav-link" href="affiliations.html">Affiliations</a></li>
+                            <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
                         </ul>
                     </div>
                 </div>
             </nav>
             <!-- Projects Section-->
-            <section class="py-5">
-                <div class="container px-5 mb-5">
-                    <div class="text-center mb-5">
-                        <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Projects</span></h1>
+            <section class="projects-section">
+                <div class="container px-5">
+                    <div class="text-center">
+                        <h1 class="display-5 fw-bolder">Projects</h1>
                     </div>
-                    <div class="row gx-5 justify-content-center">
-                        <!-- Project Card 16-->
-                        <div class="col-lg-11 col-xl-9 col-xxl-8">
-                            <div class="card project-card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder"> Youtube Channel </h2>
-                                            <p> A Django-powered web application that celebrates music by showcasing top artists across genres like pop, country, and rap. Each artist profile features curated YouTube video playlists. The platform integrates secure user authentication and authorization for users to log in and contribute their favorite videos. Designed with responsive layouts and navigation, the application delivers an engaging experience for users. </p>
-                                            <a href="https://github.com/a-yannarouse/2024-CA229-Project02" class="btn btn-primary" target="_blank"> Github </a>
-                                            <br>
-                                            <br>
-                                        </div>
-                                        <img class="img-fluid" src="assets/Projects/CA229-Project02.png" width = "300" height="400" alt="..." />
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="project-grid">
+                        <!-- Project Item 14-->
+                        <div class="project-item">
+                            <h2 class="fw-bolder">DreamLens</h2>
+                            <p>DreamLens is an AI-powered platform that helps users analyze and interpret their dreams with personalized insights and recurring themes. It features OpenAI integration and Recharts for detailed analyses and dynamic visualizations, along with secure user authentication via Clerk. Built with React and Next.js, it ensures a seamless and responsive user experience.</p>
+                            <a href="https://github.com/a-yannarouse/DreamLens" class="btn btn-primary" target="_blank">Github</a>
+                            <a href="https://dream-lens.vercel.app/" class="btn btn-primary" target="_blank">Website</a>
                         </div>
-                        <!-- Project Card 15-->
-                        <div class="col-lg-11 col-xl-9 col-xxl-8">
-                            <div class="card project-card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder"> Fitness Website </h2>
-                                            <p> An interactive Python Django-based platform that makes fitness fun and accessible. This collaborative project offers a diverse range of core, upper body, and lower body workouts. A standout feature is the dynamic "magic page," which provides personalized workout plans based on user preferences. With GitLab at the heart of its version control, the project integrated team contributions to deliver an user-centric fitness resource. </p>
-                                            <a href="https://github.com/a-yannarouse/2024-ca229-group-project" class="btn btn-primary" target="_blank"> Github </a>
-                                            <br>
-                                            <br>
-                                        </div>
-                                        <img class="img-fluid" src="assets/Projects/Group Project.png" width = "300" height="400" alt="..." />
-                                    </div>
-                                </div>
-                            </div>
+                        <!-- Project Item 13-->
+                        <div class="project-item">
+                            <h2 class="fw-bolder">AfriReligions AI</h2>
+                            <p>AfriReligions AI is a Gemini-powered chatbot designed to educate users about Santería, achieving 90% user satisfaction. It features a React-built responsive landing page that secured 10 user sign-ups in its first week.</p>
+                            <a href="https://github.com/a-yannarouse/customer-support-ai" class="btn btn-primary" target="_blank">Github</a>
+                            <a href="https://afrireligion-ai.vercel.app/" class="btn btn-primary" target="_blank">Website</a>
                         </div>
-                        <!-- Project Card 14-->
-                        <div class="col-lg-11 col-xl-9 col-xxl-8">
-                            <div class="card project-card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder"> DreamLens </h2>
-                                            <p> DreamLens is an AI-powered platform that helps users analyze and interpret their dreams with personalized insights and recurring themes. It features OpenAI integration and Recharts for detailed analyses and dynamic visualizations, along with secure user authentication via Clerk. Built with React and Next.js, it ensures a seamless and responsive user experience. </p>
-                                            <a href="https://github.com/a-yannarouse/DreamLens" class="btn btn-primary" target="_blank"> Github </a>
-                                            <br>
-                                            <br>
-                                            <a href="https://dream-lens.vercel.app/" class="btn btn-primary" target="_blank"> Website </a> 
-                                        </div>
-                                        <img class="img-fluid" src="assets/Projects/DreamLens.png" width = "300" height="400" alt="..." />
-                                    </div>
-                                </div>
-                            </div>
+                        <!-- Project Item 12-->
+                        <div class="project-item">
+                            <h2 class="fw-bolder">Brain Flip</h2>
+                            <p>Brain Flip is an AI-powered study tool that lets users create personalized flashcards from custom prompts. Built with Firebase and Clerk for secure data storage and seamless logins, it also features Stripe integration for a Pro edition with advanced study tools.</p>
+                            <a href="https://github.com/a-yannarouse/BrainFlip" class="btn btn-primary" target="_blank">Github</a>
+                            <a href="https://brain-flip.vercel.app/" class="btn btn-primary" target="_blank">Website</a>
                         </div>
-                        <!-- Project Card 13-->
-                        <div class="col-lg-11 col-xl-9 col-xxl-8">
-                            <div class="card project-card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder"> AfriReligions AI </h2>
-                                            <p> AfriReligions AI is a Gemini-powered chatbot designed to educate users about Santería, achieving 90% user satisfaction. It features a React-built responsive landing page that secured 10 user sign-ups in its first week. </p>
-                                            <a href="https://github.com/a-yannarouse/customer-support-ai" class="btn btn-primary" target="_blank"> Github </a>
-                                            <br>
-                                            <br>
-                                            <a href="https://afrireligion-ai.vercel.app/" class="btn btn-primary" target="_blank"> Website </a> 
-                                        </div>
-                                        <img class="img-fluid" src="assets/Projects/AfriReligions.png" width = "300" height="400" alt="..." />
-                                    </div>
-                                </div>
-                            </div>
+                        <!-- Project Item 11-->
+                        <div class="project-item">
+                            <h2 class="fw-bolder">Pantry Tracker</h2>
+                            <p>A web app with a real-time pantry tracker, built using Firebase and the Gemini API, and deployed on Vercel. Features a responsive, theme-adaptive UI with custom themes for enhanced user experience and optimized performance.</p>
+                            <a href="https://github.com/a-yannarouse/pantry_tracker" class="btn btn-primary" target="_blank">Github</a>
+                            <a href="https://pantry-tracker-mu-jade.vercel.app/" class="btn btn-primary" target="_blank">Website</a>
                         </div>
-                        <!-- Project Card 12-->
-                        <div class="col-lg-11 col-xl-9 col-xxl-8">
-                            <div class="card project-card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder"> Brain Flip </h2>
-                                            <p> Brain Flip is an AI-powered study tool that lets users create personalized flashcards from custom prompts. Built with Firebase and Clerk for secure data storage and seamless logins, it also features Stripe integration for a Pro edition with advanced study tools. </p>
-                                            <a href="https://github.com/a-yannarouse/BrainFlip" class="btn btn-primary" target="_blank">Github</a>
-                                            <br>
-                                            <br>
-                                            <a href="https://brain-flip.vercel.app/" class="btn btn-primary" target="_blank"> Website</a> 
-                                        </div>
-                                        <img class="img-fluid" src="assets/Projects/BrainFlip.png" width = "300" height="400" alt="..." />
-                                    </div>
-                                </div>
-                            </div>
+                        <!-- Project Item 10-->
+                        <div class="project-item">
+                            <h2 class="fw-bolder">Portfolio Website</h2>
+                            <p>My official portfolio website showcases projects using HTML, CSS, and JavaScript for front-end development, with Google Analytics integrated for performance tracking.</p>
+                            <a href="https://github.com/a-yannarouse/Portfolio" class="btn btn-primary" target="_blank">Github</a>
                         </div>
-                        <!-- Project Card 11-->
-                        <div class="col-lg-11 col-xl-9 col-xxl-8">
-                            <div class="card project-card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder"> Pantry Tracker </h2>
-                                            <p> A web app with a real-time pantry tracker, built using Firebase and the Gemini API, and deployed on Vercel. Features a responsive, theme-adaptive UI with custom themes for enhanced user experience and optimized performance. </p>
-                                            <a href="https://github.com/a-yannarouse/pantry_tracker" class="btn btn-primary" target="_blank">Github</a>
-                                            <br>
-                                            <br>
-                                            <a href="https://pantry-tracker-mu-jade.vercel.app/" class="btn btn-primary" target="_blank"> Website</a> <!-- Add the website after deployed-->
-                                        </div>
-                                        <img class="img-fluid" src="assets/Projects/Pantry.png" width = "300" height="400" alt="..." />
-                                    </div>
-                                </div>
-                            </div>
+                        <!-- Project Item 9-->
+                        <div class="project-item">
+                            <h2 class="fw-bolder">Rate My Professor</h2>
+                            <p>Rate My Professor is an AI-powered platform that lets users search and review professors through an intelligent chatbot interface. With OpenAI integration, it provides real-time, accurate professor information. Built using Prisma and Firestore, the platform ensures seamless access to ratings, reviews, and user data.</p>
+                            <a href="https://github.com/a-yannarouse/RMP" class="btn btn-primary" target="_blank">Github</a>
+                            <a href="https://rmp-three.vercel.app/" class="btn btn-primary" target="_blank">Check it Out!</a>
                         </div>
-                        <!-- Project Card 10-->
-                        <div class="col-lg-11 col-xl-9 col-xxl-8">
-                            <div class="card project-card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder"> Portfolio Website</h2>
-                                            <p> My official portfolio website showcases projects using HTML, CSS, and JavaScript for front-end development, with Google Analytics integrated for performance tracking. </p>
-                                            <a href="https://github.com/a-yannarouse/Portfolio" class="btn btn-primary" target="_blank">Github</a>
-                                        </div>
-                                        <img class="img-fluid" src="assets/Projects/Portfolio.png" width = "300" height="400" alt="..." />
-                                    </div>
-                                </div>
-                            </div>
+                        <!-- Project Item 8-->
+                        <div class="project-item">
+                            <h2 class="fw-bolder">Travel Memory Journal</h2>
+                            <p>This is a collaborative group class project. The Travel Memory Journal is an interactive platform designed for travelers to document and revisit their journeys. This digital journal allows users to record details of their trips, including the cities they visited, travel dates, and personal trip descriptions.</p>
+                            <a href="https://github.com/a-yannarouse/Time_Memory_Journal" class="btn btn-primary" target="_blank">Github</a>
+                            <a href="https://drive.google.com/file/d/1stC3fcyj8kNFbZStK31kV6UU_Bs7T8JS/view?usp=sharing" class="btn btn-primary" target="_blank">Video Description</a>
                         </div>
-                        <!-- Project Card 9-->
-                        <div class="col-lg-11 col-xl-9 col-xxl-8">
-                            <div class="card project-card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder"> Rate My Professor</h2>
-                                            <p> Rate My Professor is an AI-powered platform that lets users search and review professors through an intelligent chatbot interface. With OpenAI integration, it provides real-time, accurate professor information. Built using Prisma and Firestore, the platform ensures seamless access to ratings, reviews, and user data. </p>
-                                            <a href="https://github.com/a-yannarouse/RMP" class="btn btn-primary" target="_blank">Github</a>
-                                            <br>
-                                            <br>
-                                            <a href="https://rmp-three.vercel.app/" class="btn btn-primary" target="_blank">Check it Out!</a>
-                                        </div>
-                                        <img class="img-fluid" src="assets/Projects/RMP.png" width = "300" height="400" alt="" />
-                                    </div>
-                                </div>
-                            </div>
+                        <!-- Project Item 7-->
+                        <div class="project-item">
+                            <h2 class="fw-bolder">Phisherman's Quest</h2>
+                            <p>This is my Girls Who Code's Leadership Academy Give Back Project. Me and another fellow collaborated together to design and develop a game for our cybersecurity awareness project to gain awareness of phishing.</p>
+                            <a href="https://github.com/a-yannarouse/Phisherman-s-Quest" class="btn btn-primary" target="_blank">Github</a>
+                            <a href="https://a-yannarouse.github.io/Phisherman-s-Quest/Builds/Second%20Build/index.html" class="btn btn-primary" target="_blank">Play the Game!</a>
                         </div>
-                        <!-- Project Card 8-->
-                        <div class="col-lg-11 col-xl-9 col-xxl-8">
-                            <div class="card project-card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">Travel Memory Journal</h2>
-                                            <p> This is a collaborative group class project. The Travel Memory Journal is an interactive platform designed for travelers to document and revisit their journeys. This digital journal allows users to record details of their trips, including the cities they visited, travel dates, and personal trip descriptions. </p>
-                                            <a href="https://github.com/a-yannarouse/Time_Memory_Journal" class="btn btn-primary" target="_blank">Github</a>
-                                            <br>
-                                            <br>
-                                            <a href="https://drive.google.com/file/d/1stC3fcyj8kNFbZStK31kV6UU_Bs7T8JS/view?usp=sharing" class="btn btn-primary" target="_blank">Video Description</a>
-                                        </div>
-                                        <img class="img-fluid" src="assets/Projects/Travel Journal.png" width = "300" height="400" alt="" />
-                                    </div>
-                                </div>
-                            </div>
+                        <!-- Project Item 6-->
+                        <div class="project-item">
+                            <h2 class="fw-bolder">Learning Korean Vowels</h2>
+                            <p>Inspired by Duolingo, I made a project that teaches you Korean vowels and you take a small quiz at the end! Inspired by Duolingo, I made a project that teaches you Korean vowels and you take a small quiz at the end!</p>
+                            <a href="https://studio.code.org/projects/applab/QyOrKhvuoow1PiiWwjvT4iDNm2A-aebgPMJKSza8T3A" class="btn btn-primary" target="_blank">Play the Game!</a>
                         </div>
-                        <!-- Project Card 7-->
-                        <div class="col-lg-11 col-xl-9 col-xxl-8">
-                            <div class="card project-card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">Phisherman's Quest</h2>
-                                            <p> This is my Girls Who Code's Leadership Academy Give Back Project. Me and another fellow collaborated together to design and develop a game for our cybersecurity awareness project to gain awareness of phishing. </p>
-                                            <a href="https://github.com/a-yannarouse/Phisherman-s-Quest" class="btn btn-primary" target="_blank">Github</a>
-                                            <br>
-                                            <br>
-                                            <a href="https://a-yannarouse.github.io/Phisherman-s-Quest/Builds/Second%20Build/index.html" class="btn btn-primary" target="_blank">Play the Game!</a>
-                                        </div>
-                                        <img class="img-fluid" src="assets/Projects/Fisherman.png" width = "300" height="400" alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Project Card 6-->
-                            <div class="card project-card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">Learning Korean Vowels</h2>
-                                            <p>Inspired by Duolingo, I made a project that teaches you Korean vowels and you take a small quiz at the end! </p>
-                                            <a href="https://studio.code.org/projects/applab/QyOrKhvuoow1PiiWwjvT4iDNm2A-aebgPMJKSza8T3A" class="btn btn-primary" target="_blank">Play the Game!</a>
-                                        </div>
-                                        <img class="img-fluid" src="assets/Projects/Korea flag.png" width = "300" height="400" alt="..." />
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Project Card 5-->
-                            <div class="card project-card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">Personality Quiz</h2>
-                                            <p> One of my GirlsWhoCode projects was building a Buzzfeed-style personality quiz to find out which Goblin (tv show) character you are, where users click on buttons to select their answers to questions and, at the end, receive a message about themselves.</p>
-                                            <a href="https://github.com/a-yannarouse/which-goblin-character-are-you" class="btn btn-primary" target="_blank">Github</a>
-                                            <br>
-                                            <br>
-                                            <a href="https://which-goblin-character-are-you.glitch.me/" class="btn btn-primary" target="_blank">Start the Quiz!</a>
-                                        </div>
-                                        <img class="img-fluid" src="assets/Projects/Quiz.png" width = "300" height="400" alt="..." />
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Project Card 4-->
-                            <div class="card project-card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">Personal Website</h2>
-                                            <p>My first project for GirlsWhoCode was making a personal website I can use during and after the program. It has my bio, projects, and blogs that I did during the program! </p>
-                                            <a href="https://github.com/a-yannarouse/Personal-website" class="btn btn-primary" target="_blank">Github</a>
-                                            <br>
-                                            <br>
-                                            <a href="https://yanni-website.glitch.me/" class="btn btn-primary" target="_blank">Check it Out!</a>
-                                        </div>
-                                        <img class="img-fluid" src="assets/Projects/Personal Website.png" width = "300" height="400" alt="..." />
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Project Card 3-->
-                            <div class="card project-card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">Activist Toolkit: Autism Awareness</h2>
-                                            <p>For my final project for GirlsWhoCode, I created an activist website to take action for autism awareness! I used all the knowledge I knew from the program to create the website. </p>
-                                            <a href="https://github.com/a-yannarouse/Learn-Autism-Awareness" class="btn btn-primary" target="_blank">Github</a>
-                                            <br>
-                                            <br>
-                                            <a href="https://learn-autism-awareness.glitch.me/index.html" class="btn btn-primary" target="_blank">Check it Out!</a>
-                                        </div>
-                                        <img class="img-fluid" src="assets/Projects/Autism Awareness.png" width = "300" height="400" alt="..." />
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Project Card 2-->
-                            <div class="card project-card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">Connect Four</h2>
-                                            <p> This is a class project. I used python to develop a Connect Four game, featuring computer-generated players that intelligently guess the next move. </p>
-                                            <a href="https://github.com/Yanni620/Connect-Four" class="btn btn-primary" target="_blank">Github</a>
-                                        </div>
-                                        <img class="img-fluid" src="assets/Projects/Connect4.jpg" width = "300" height="400" alt="..." />
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Project Card 1-->
-                            <div class="card project-card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">The Eight-Puzzle</h2>
-                                            <p> This is a class project. I used python to develop an 8-Puzzle game to simulate the puzzle-solving process. </p>
-                                            <a href="https://github.com/Yanni620/The-Eight-Puzzle" class="btn btn-primary" target="_blank">Github</a>
-                                        </div>
-                                        <img class="img-fluid" src="assets/Projects/8-Puzzle.png" width = "220" height="400" alt="..." />
-                                    </div>
-                                </div>
-                            </div>
+                        <!-- Project Item 5-->
+                        <div class="project-item">
+                            <h2 class="fw-bolder">Personality Quiz</h2>
+                            <p>One of my GirlsWhoCode projects was building a Buzzfeed-style personality quiz to find out which Goblin (tv show) character you are, where users click on buttons to select their answers to questions and, at the end, receive a message about themselves.</p>
+                            <a href="https://github.com/a-yannarouse/which-goblin-character-are-you" class="btn btn-primary" target="_blank">Github</a>
+                            <a href="https://which-goblin-character-are-you.glitch.me/" class="btn btn-primary" target="_blank">Start the Quiz!</a>
+                        </div>
+                        <!-- Project Item 4-->
+                        <div class="project-item">
+                            <h2 class="fw-bolder">Personal Website</h2>
+                            <p>My first project for GirlsWhoCode was making a personal website I can use during and after the program. It has my bio, projects, and blogs that I did during the program!</p>
+                            <a href="https://github.com/a-yannarouse/Personal-website" class="btn btn-primary" target="_blank">Github</a>
+                            <a href="https://yanni-website.glitch.me/" class="btn btn-primary" target="_blank">Check it Out!</a>
+                        </div>
+                        <!-- Project Item 3-->
+                        <div class="project-item">
+                            <h2 class="fw-bolder">Activist Toolkit: Autism Awareness</h2>
+                            <p>For my final project for GirlsWhoCode, I created an activist website to take action for autism awareness! I used all the knowledge I knew from the program to create the website.</p>
+                            <a href="https://github.com/a-yannarouse/Learn-Autism-Awareness" class="btn btn-primary" target="_blank">Github</a>
+                            <a href="https://learn-autism-awareness.glitch.me/index.html" class="btn btn-primary" target="_blank">Check it Out!</a>
+                        </div>
+                        <!-- Project Item 2-->
+                        <div class="project-item">
+                            <h2 class="fw-bolder">Connect Four</h2>
+                            <p>This is a class project. I used python to develop a Connect Four game, featuring computer-generated players that intelligently guess the next move.</p>
+                            <a href="https://github.com/Yanni620/Connect-Four" class="btn btn-primary" target="_blank">Github</a>
+                        </div>
+                        <!-- Project Item 1-->
+                        <div class="project-item">
+                            <h2 class="fw-bolder">The Eight-Puzzle</h2>
+                            <p>This is a class project. I used python to develop an 8-Puzzle game to simulate the puzzle-solving process.</p>
+                            <a href="https://github.com/Yanni620/The-Eight-Puzzle" class="btn btn-primary" target="_blank">Github</a>
                         </div>
                     </div>
                 </div>
@@ -352,26 +229,19 @@
             </section>
         </main>
         <!-- Footer-->
-        <footer>
+        <footer class="footer">
             <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="bix-footer-contact">
-                            <p> Copyright &copy; 4 A'Yanna Rouse. All Rights Reserved.</p>
-                        <div class="logo-links">
-                            <a class="text-gradient" href="mailto:yanni620@bu.edu"><i class="bi bi-envelope"></i></a>
-                            <a class="text-gradient" href="https://www.linkedin.com/in/ayannarouse/"><i class="bi bi-linkedin"></i></a>
-                            <a class="text-gradient" href="https://github.com/a-yannarouse"><i class="bi bi-github"></i></a>
-                        </div>
+                <p>Copyright &copy; 2025 A'Yanna Rouse. All Rights Reserved.</p>
+                <div class="logo-links">
+                    <a href="mailto:yanni620@bu.edu"><i class="bi bi-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/ayannarouse/"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://github.com/a-yannarouse"><i class="bi bi-github"></i></a>
                 </div>
             </div>
-            </div>
-        </div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- Background theme JS-->
     </body>
 </html>
